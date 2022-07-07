@@ -1,0 +1,131 @@
+{
+
+    "1stgen": {
+      "red" : "0",
+      "blue" : "1",
+      "yellow": "2",
+      "gold": "3",
+      "silver" : "4",
+      "crystal": "5",
+      "ruby" : "6",
+      "sapphire" : "7",
+      "emerald" : "8",
+      "firered" : "9",
+      "leafgreen":"10",
+      "diamond":"11",
+      "pearl":"12",
+      "platinum": "13",
+      "heartgold": "14",
+      "soulsilver": "15",
+      "black":"17",
+      "white":"19",
+      "black2":"20",
+      "white2":"21",
+      "x": "28",
+      "y": "36",
+      "omega-ruby" : "44",
+      "alpha-sapphire": "52",
+      "let's-go-pikachu": "61",
+      "let's-go-eevee":"71",
+      "default":"0"
+    },
+    "2ndgen": {
+        "gold": "0",
+        "silver" : "1",
+        "crystal": "2",
+        "ruby" : "3",
+        "sapphire" : "4",
+        "emerald" : "5",
+        "firered" : "6",
+        "leafgreen":"7",
+        "diamond":"8",
+        "pearl":"9",
+        "platinum": "10",
+        "heartgold": "11",
+        "soulsilver": "12",
+        "black":"14",
+        "white":"16",
+        "black2":"17",
+        "white2":"18",
+        "x": "25",
+        "y": "33",
+        "omega-ruby" : "41",
+        "alpha-sapphire": "49",
+        "default":"0"
+    },
+    "3rdgen":{
+        "ruby" : "0",
+        "sapphire" : "1",
+        "emerald" : "2",
+        "firered" : "3",
+        "leafgreen":"4",
+        "diamond":"5",
+        "pearl":"6",
+        "platinum": "7",
+        "heartgold": "8",
+        "soulsilver": "9",
+        "black":"11",
+        "white":"13",
+        "black2":"14",
+        "white2":"15",
+        "x": "22",
+        "y": "30",
+        "omega-ruby" : "38",
+        "alpha-sapphire" : "46",
+        "default":"0"
+    },
+    "4thgen":{
+        "diamond":"0",
+        "pearl":"1",
+        "platinum": "2",
+        "heartgold": "3",
+        "soulsilver": "4",
+        "black":"6",
+        "white":"8",
+        "black2":"9",
+        "white2":"10",
+        "x": "17",
+        "y": "25",
+        "omega-ruby" : "33",
+        "alpha-sapphire": "41",
+        "default":"0"
+    },
+    "5thgen":{
+        "black":"1",
+        "white":"3",
+        "black2":"4",
+        "white2":"5",
+        "x": "12",
+        "y": "20",
+        "omega-ruby" : "28",
+        "alpha-sapphire": "36",
+        "default":"1"
+    },
+    "6thgen":{
+        "x": "6",
+        "y": "14",
+        "omega-ruby" : "22",
+        "alpha-sapphire": "30",
+        "default":"6"
+    },
+    "7thgen":{
+        "sun" :"7",
+        "moon":"17",
+        "ultra-sun":"27",
+        "ultra-moon":"37",
+        "default":"7"
+    },
+    "8thgen":{
+        "sword":"7",
+        "shield":"17",
+        "default":"7"
+    }
+    
+    
+
+    
+    
+
+
+
+}
