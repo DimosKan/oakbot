@@ -18,12 +18,13 @@ const tweet = require('./functions/tweet');
 const talkedRecently = new Set();
 const pm = new Pokedex();
 const client = new Discord.Client();
+const { token } = require('./token.json');
 
 //tweet.tweet(client);
 //calender.calenderauth();
 
 //Event: Όταν το bot συνδέεται στο discord (offline --> online)
-client.login('NjQ2ODQ4MjU3OTU5NjU3NDg1.XdXGYg.Rmsjso8d84EtOEEKsmISZpmyOwc');
+client.login(token);
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setActivity('γράψε ;helprof για βοήθεια.');
@@ -31,7 +32,7 @@ client.on('ready', () => {
 
 //Event: Οταν το bot αποσυνδέεται απο το discord (online --> offline)
 client.on('disconnected', function() {
-  client.login('NjQ2ODQ4MjU3OTU5NjU3NDg1.XdXGYg.Rmsjso8d84EtOEEKsmISZpmyOwc')
+  client.login(token)
 	.catch(console.error);
 });
 
