@@ -290,23 +290,32 @@ db.close()
 }
 
 function blackList(message,client){
-var words = message.content.split(' ');
-        var i=1
-        var username = ""
-        while(i<100 && username == ""){
-          var username = words[i]
-         i= i+1
-        }
-        if (!username == ""){
-        let user = client.users.cache.find(user => user.username == username);
-        if (user == null){
-          message.reply("Δεν μπόρεσα να διαβάσω το όνομα του χρήστη.\nΣυμβουλή: Πρόσεχε τα κενά και τα κεφαλαία γράμματα")
-          return;
-        }
+  var words = message.content.split(' ');
+  var i=1
+  var username = ""
+  while(i<100 && username == ""){
+    var username= words[i]
+    i= i+1
+  }
+
+  if (!username == ""){
+   username = username.replace(/[^a-zA-Z0-9- ]/g, "")
+   username = username.toUpperCase();
+  }else{
+    message.reply("Πρέπει να γράψεις το όνομα του παίκτη μετά την εντολή για να σου δώσω το Friend code του")
+    return;
+  }
+
+  if (!isNaN(username)){
+    username = message.guild.members.cache.get(username).displayName 
+    userid= message.mentions.users.first().id;
+    username = username.split(" | ")
+    username = username[0]
+    username = username.toUpperCase();
         let db = new sqlite.Database('./databases/Serverinfo', sqlite.OPEN_READWRITE | sqlite.OPEN_CREATE);
         db.serialize(function(){
           var smmt = db.prepare("INSERT OR REPLACE INTO Blacklist VALUES(?,?,?)");
-          smmt.run(username,user.id,message.guild.id);
+          smmt.run(username,userid,message.guild.id);
           smmt.finalize();
           db.close()
           message.author.send(`Ο χρήστης ${username} μπήκε στην μαύρη την λίστα.`);
@@ -318,27 +327,38 @@ var words = message.content.split(' ');
       }
 
       function whiteList(message,client){
-      var words = message.content.split(' ');
-      var i=1
-      var username = ""
-      while(i<100 && username == ""){
-        var username = words[i]
-       i= i+1
-      }
+        var words = message.content.split(' ');
+  var i=1
+  var username = ""
+  while(i<100 && username == ""){
+    var username= words[i]
+    i= i+1
+  }
+
+  if (!username == ""){
+   username = username.replace(/[^a-zA-Z0-9- ]/g, "")
+   username = username.toUpperCase();
+  }else{
+    message.reply("Πρέπει να γράψεις το όνομα του παίκτη μετά την εντολή για να σου δώσω το Friend code του")
+    return;
+  }
+
+  if (!isNaN(username)){
+    username = message.guild.members.cache.get(username).displayName 
+    userid= message.mentions.users.first().id;
+    username = username.split(" | ")
+    username = username[0]
+    username = username.toUpperCase();
       let db = new sqlite.Database('./databases/Serverinfo', sqlite.OPEN_READWRITE | sqlite.OPEN_CREATE);
-      let user = client.users.cache.find(user => user.username == username);
-      if (user == null){
-        message.reply("Δεν μπόρεσα να διαβάσω το όνομα του χρήστη.\nΣυμβουλή: Πρόσεχε τα κενά και τα κεφαλαία γράμματα")
-        return;
-      }
       db.serialize(function(){
         var smmt = db.prepare("DELETE FROM Blacklist WHERE Username = ? AND userid = ? AND serverid = ?");
-        smmt.run(username, user.id ,message.guild.id);
+        smmt.run(username, userid ,message.guild.id);
         smmt.finalize();
        db.close();
        message.author.send(`Ο χρήστης ${username} αφαιρέθηκε από την μαύρη την λίστα.`);
        });
       }
+    }
 
       function showList(message){
         let db = new sqlite.Database('./databases/Serverinfo', sqlite.OPEN_READWRITE | sqlite.OPEN_CREATE);
