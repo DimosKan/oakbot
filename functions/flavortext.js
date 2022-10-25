@@ -75,7 +75,7 @@ pm.getPokemonSpeciesByName(pokemon)
       message.reply("Δεν υπάρχουν στοιχεία για το pokemon αυτό στην κασέτα που έγραψες ή δεν έγραψες σωστά το όνομα της κασέτας");
       return;
     }
-    translatext = response["flavor_text_entries"][flavorvar]["flavor_text"].replace(/(\r\n|\n|\r)/gm, " ").replace(/\u000c/gmu, " ")
+    var translatext = response["flavor_text_entries"][flavorvar]["flavor_text"].replace(/(\r\n|\n|\r)/gm, " ").replace(/\u000c/gmu, " ")
     message.reply (translatext)
    } else{
      var flavorvar = pokemon[geniden][version]
